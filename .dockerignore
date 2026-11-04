@@ -1,0 +1,14 @@
+.git
+.github
+.husky
+.vscode
+.next
+node_modules
+coverage
+design
+docs
+*.md
+.env*
+Dockerfile
+docker-compose.yml
+.dockerignore
