@@ -1,6 +1,6 @@
 # Quy tắc thiết kế
 
-Mục tiêu: giao diện sang trọng, thanh lịch của một dịch vụ tiệc nấu sẵn Việt Nam, đúng theo Prototype 5.11. Không dùng bố cục mẫu hay giá trị do AI tự đoán.
+Mục tiêu: giao diện sang trọng, thanh lịch của một dịch vụ tiệc nấu sẵn Việt Nam, đúng theo Prototype 5.11. Không dùng bố cục mẫu hay giá trị ước lượng.
 
 ## Căn chỉnh
 

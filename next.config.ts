@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   // `next start` does not work with standalone output, so only the Docker build opts in.
   output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
   poweredByHeader: false,
+  agentRules: false,
   cacheComponents: true,
   partialPrefetching: true,
   images: {
