@@ -26,7 +26,10 @@ export function LunarDatePicker({
             className="underline"
             onClick={(event) => {
               event.preventDefault();
-              showToast("Bản thật có bộ chọn ngày âm, hệ thống lưu ngày dương");
+              showToast(
+                "Bản thật có bộ chọn ngày âm, hệ thống lưu ngày dương",
+                "info",
+              );
             }}
           >
             Chọn theo âm lịch

@@ -31,7 +31,7 @@ function BookingSteps({ signedIn }: { signedIn: boolean }) {
       goTo("review");
       return;
     }
-    showToast("Đăng nhập để gửi đơn, lựa chọn của bạn vẫn được giữ");
+    showToast("Đăng nhập để gửi đơn, lựa chọn của bạn vẫn được giữ", "info");
     router.push(
       `${ROUTES.login}?next=${encodeURIComponent(`${ROUTES.booking}?step=details`)}`,
     );
@@ -54,7 +54,12 @@ function BookingSteps({ signedIn }: { signedIn: boolean }) {
         {current === 3 ? (
           <OrderReview
             onBack={() => goTo("details")}
-            onSubmit={() => goTo("sent")}
+            onSubmit={() => {
+              goTo("sent");
+              showToast(
+                "Đặt đơn thành công! Tư vấn sẽ sớm gọi cho bạn để khảo sát địa điểm.",
+              );
+            }}
           />
         ) : null}
         {current === 4 ? <OrderSentState /> : null}
