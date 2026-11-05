@@ -10,7 +10,7 @@ export function HeroCinema() {
       <Reveal variant="wipe" immediate className="hero-media-clip">
         <span className="hero-media-frame">
           <Image
-            src="/images/scenes/hero.jpg"
+            src="/images/scenes/home1.jpg"
             alt="Minh họa bàn tiệc nhìn từ trên xuống, đĩa sứ men lam trên khăn xanh đậm"
             fill
             priority
