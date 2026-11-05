@@ -8,7 +8,7 @@ describe("cn", () => {
   });
 
   it("keeps a custom text size alongside a text colour", () => {
-    expect(cn("text-display", "text-muted")).toBe("text-display text-muted");
+    expect(cn("text-14-5", "text-ink")).toBe("text-14-5 text-ink");
   });
 
   it("merges custom text sizes with each other", () => {

@@ -8,24 +8,23 @@ const eslintConfig = defineConfig([
   ...nextTs,
   prettier,
   {
-    // Icons go through one curated entry point so the set stays consistent.
-    ignores: ["src/components/icons/**"],
+    // The UI uses the project's own hairline icons only (prototype section 2.5).
     rules: {
       "no-restricted-imports": [
         "error",
         {
           patterns: [
             {
-              group: ["@phosphor-icons/react", "@phosphor-icons/react/*"],
-              message: 'Import icons from "@/components/icons".',
-            },
-            {
-              group: ["simple-icons", "simple-icons/*"],
-              message: 'Use <BrandIcon> from "@/components/icons".',
-            },
-            {
-              group: ["lucide-react", "react-icons", "react-icons/*"],
-              message: 'Project icons are Phosphor: "@/components/icons".',
+              group: [
+                "@phosphor-icons/*",
+                "simple-icons",
+                "simple-icons/*",
+                "lucide-react",
+                "react-icons",
+                "react-icons/*",
+                "@heroicons/*",
+              ],
+              message: 'Project icons are custom: "@/components/icons".',
             },
           ],
         },

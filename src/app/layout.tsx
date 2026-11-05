@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Be_Vietnam_Pro, Newsreader } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
 
@@ -11,10 +11,8 @@ const beVietnamPro = Be_Vietnam_Pro({
   weight: ["400", "500", "600", "700"],
 });
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin", "vietnamese"],
-});
+// Runs before paint. Without JS no hidden reveal state applies.
+const MOTION_SCRIPT = `document.documentElement.classList.add(matchMedia("(prefers-reduced-motion: reduce)").matches?"motion-still":"motion-live")`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -32,15 +30,20 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColor,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="vi"
-      className={`${beVietnamPro.variable} ${newsreader.variable} h-full`}
+      className={`${beVietnamPro.variable} h-full`}
+      suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col antialiased">{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: MOTION_SCRIPT }} />
+      </head>
+      <body className="min-h-full antialiased">{children}</body>
     </html>
   );
 }

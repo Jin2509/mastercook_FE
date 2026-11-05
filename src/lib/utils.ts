@@ -1,11 +1,39 @@
 import { type ClassValue, clsx } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
-// Without this, tailwind-merge reads `text-display` as a colour and drops it next to `text-muted`.
+// tailwind-merge would otherwise read text-14-5 as a colour.
 const twMerge = extendTailwindMerge({
   extend: {
     theme: {
-      text: ["display", "heading", "title"],
+      text: [
+        "10-5",
+        "11",
+        "11-5",
+        "12",
+        "12-5",
+        "13",
+        "13-5",
+        "14",
+        "14-5",
+        "15",
+        "15-5",
+        "16",
+        "16-5",
+        "17",
+        "18",
+        "20",
+        "22",
+        "23",
+        "24",
+        "27",
+        "30",
+        "32",
+        "34",
+        "39",
+        "44",
+        "56",
+        "70",
+      ],
     },
   },
 });

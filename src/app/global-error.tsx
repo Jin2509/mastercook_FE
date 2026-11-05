@@ -1,6 +1,6 @@
 "use client";
 
-// Replaces the root layout when it fails, so it can't rely on global styles or fonts.
+// Replaces the root layout, so global styles and fonts are unavailable.
 export default function GlobalError({
   retry,
 }: {
